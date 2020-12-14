@@ -16,9 +16,9 @@ python3 manage.py runserver
 ###### Доступные сейчас запросы:
 ```url
 /api/doctors: получить всех докторов
-/api/users: получить всех пациентов
-/api/users?doctor_id=1: получить всех пациентов доктора с таким id
-/api/test: получить все тесты
-/api/test?with_questions=True: получить все тесты с вопросами
-/api/test?with_questions?test_id=1: получить тест с таким id и вопросами к нему
+/api/users/: получить всех пациентов
+/api/users/?doctor_id=1: получить всех пациентов доктора с таким id
+/api/test/: получить все тесты
+/api/test/?with_questions=True: получить все тесты с вопросами
+/api/test/?with_question=Tures?test_id=1: получить тест с таким id и вопросами к нему
 ```
