@@ -1,7 +1,7 @@
 from rest_framework.views import APIView
 from rest_framework.generics import get_object_or_404
 from rest_framework.response import Response
-from .models import Doctor, User, Test, Question, Result
+from .models import Doctor, User, Test, Result
 
 
 class DoctorsView(APIView):
@@ -28,10 +28,6 @@ class TestView(APIView):
             tests = Test.objects.all()
             return {"tests": tests}
         test = get_object_or_404(Test, id=test_id)[0]
-        with_questions = request.GET.get("with_questions", False)
-        if with_questions:
-            questions = get_object_or_404(Question, test=test).all()
-            return Response({"test": test, "questions": questions})
         return Response({"test": test})
 
 
